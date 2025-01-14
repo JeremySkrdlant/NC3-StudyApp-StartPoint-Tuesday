@@ -7,13 +7,24 @@
 
 import SwiftUI
 
+var test = Test(title: "Certified User", numberOfQuestions: 40, subject: [:])
+
 struct ContentView: View {
+    @State var addNewSubjectPresented = false
+    
+    
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Subject Area")
+            Button {
+                addNewSubjectPresented = true
+            } label: {
+                Text("Add Another Subject")
+            }
+        }
+        .sheet(isPresented: $addNewSubjectPresented) {
+            AddSubject(isShowing: $addNewSubjectPresented)
         }
         .padding()
     }
