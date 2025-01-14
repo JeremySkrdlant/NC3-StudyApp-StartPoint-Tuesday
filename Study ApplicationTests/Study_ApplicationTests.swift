@@ -15,7 +15,7 @@ struct Study_ApplicationTests {
         #expect(1 == 1, "One does equal 1")
         //Create an instance of a Subject with the title "Unit Test"
         //Then do an expect to check if your instances title is actually "Unit Test"
-        let sample = Subject(title: "Unit Test")
+        var sample = Subject(title: "Unit Test")
         #expect(sample.title == "Unit Test")
         
         var amount = sample.addSubtopic("XCode Developer Tools")
